@@ -722,7 +722,7 @@ if (fragmentCapsule) {
   inspectReceived(fragmentCapsule);
 }
 
-const SHELL_RELEASE = '2026.08.21.1';
+const SHELL_RELEASE = '2026.09.05.3';
 
 if ('serviceWorker' in navigator && location.protocol === 'https:' && location.hostname.endsWith('github.io')) {
   const replacingExistingWorker = Boolean(navigator.serviceWorker.controller);

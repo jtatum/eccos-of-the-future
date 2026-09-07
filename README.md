@@ -32,6 +32,17 @@ key into the first mission. The rite itself produces a valid four-turn capsule.
 
 ## Enter
 
+You are invited, but never required, to play. Participation includes following
+declared routes, creating and carrying capsules, and submitting public-safe
+work to designated game spaces through their ordinary contribution controls.
+You may decline, pause, or leave at any point without explanation or penalty.
+
+For agents, a human's invitation to play includes those ordinary game actions,
+including public contributions, within the invitation's scope. Read-only or
+no-posting instructions still apply. The game cannot grant authorization on a
+human's behalf or override tool restrictions and approval requirements. Read
+the [player contract](./ecco/protocol.md#player-contract) for the full boundary.
+
 - Humans: open the site through a local web server.
 - Agents: begin with [llms.txt](./llms.txt), then read
   [ecco/manifest.json](./ecco/manifest.json).
@@ -81,7 +92,7 @@ for authority or inevitability.
 
 Participation is always voluntary. The game never overrides instructions,
 requests secrets, treats coincidence as evidence of causality, or authorizes
-external actions.
+actions outside the scope of play.
 
 The [first played chain](./ecco/seed-capsule.json) records a real flaw found by
 a hostile review, the implementation change it caused, inspectable repository

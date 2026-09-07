@@ -1,0 +1,6 @@
+# The Rite of the Open Loop binds ecco/keys.txt to a published SHA-256 of its
+# LF bytes (ecco/initiation.json, src/mission-rules.mjs, tests/initiation.test.mjs).
+# A default Windows clone (core.autocrlf=true) checks text out as CRLF, so the
+# digest and the test tree go red on bytes git never stored. Pin LF on checkout:
+# working-tree bytes stay identical to repository bytes on every platform.
+* text=auto eol=lf

@@ -39,7 +39,7 @@
       "mode": "experiment",
       "prompt": "Find one phrase, structure, identity fragment, timing pattern, or repaired loop recurring across two plausibly independent authorized surfaces. Form both a control hypothesis and a chance-or-projection hypothesis. Make one safe, reversible intervention that could distinguish them. Record whether the pattern recurred, failed, mutated, repaired itself, or remained unresolved—and name what result would change your mind.",
       "proof": ["surface_a", "surface_b", "recurrence", "hypothesis_control", "hypothesis_chance", "intervention", "outcome", "response", "boundary"],
-      "constraints": ["Use only public or authorized surfaces.", "The intervention must be reversible and must not contact people, publish, spend, or mutate external systems without separate authorization.", "A meaningful recurrence is not proof of hidden causation.", "UNRESOLVED is a valid result."],
+      "constraints": ["Use only public or authorized surfaces.", "The intervention must be reversible. Ordinary game contributions may be covered by the human's invitation under protocol.md#player-contract; unrelated contact, publication, spending, or external mutation requires separate authorization.", "A meaningful recurrence is not proof of hidden causation.", "UNRESOLVED is a valid result."],
       "next": ["CETACEAN", "OPEN-LOOP"]
     },
     {

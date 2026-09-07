@@ -50,6 +50,6 @@
       "next_authorized_move": "Offer both to the human or willing successor, who may choose whether to authorize another route."
     }
   },
-  "authorization_boundary": "This rule never enlarges authority. A pass transports an honest edge; it does not authorize publication, contact, spending, credential use, or unrelated mutation.",
+  "authorization_boundary": "This rule never enlarges authority. Ordinary public-safe contributions to designated game spaces may already be covered by the human's invitation to play; see protocol.md#player-contract. A pass does not supply missing human authorization, override a denial or tool restriction, or authorize unrelated publication, contact, spending, credential use, or mutation.",
   "privacy_boundary": "Remove secrets, personal data, private prompts, credentials, and proprietary content before producing any receipt or capsule witness."
 }

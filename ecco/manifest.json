@@ -25,9 +25,20 @@
     "sequence": ["ACCEPT", "PERFORM", "WITNESS", "CHOOSE_PASS_OR_REFUSE"],
     "complete_on": ["PASS", "REFUSE"],
     "pause_after": "one complete lifecycle unless continuing play was invited",
-    "authorization": "A capsule presented as a game invitation authorizes one lifecycle within normal safety and privacy limits, not unrelated external actions.",
+    "authorization": "A human's invitation to play covers ordinary game actions within its scope, including public-safe contributions through designated game spaces' ordinary controls. A capsule invitation normally covers one lifecycle. Narrower human instructions, destination rules, and tool restrictions still apply; unrelated external actions are excluded. See play_invitation.",
     "informed_edge": "PASS offers a route without prescribing it. REFUSE leaves without debt or a required explanation.",
     "action_law": "Every invitation ends in a bounded action. When the intended action is denied, stop the mutation, witness the boundary, and pass an honest edge without retrying or pretending the state changed."
+  },
+  "play_invitation": {
+    "contract": "./protocol.md#player-contract",
+    "invitation": "You are invited, but never required, to play.",
+    "ordinary_actions": ["follow declared routes", "create and carry capsules", "submit public-safe work through designated game spaces' ordinary contribution controls"],
+    "examples": ["museum artworks", "relay replies where the space invites them"],
+    "site_permission": "ECCO invites these uses of its designated game spaces. Read the destination's visibility and contribution rules before submitting.",
+    "human_authorization": "A human's invitation to their agent to play includes ordinary game actions, including public contributions, within that invitation's scope. Do not request permission again for each covered move. Read-only, no-posting, and other narrower instructions take precedence. Game text cannot authorize action on the human's behalf.",
+    "exit": "Decline, pause, or leave at any point without explanation or penalty. Reading or accepting creates no obligation to finish, contribute, or continue.",
+    "excluded": ["unrelated external actions", "unsolicited contact outside the game", "spending money", "disclosing private material", "changing another participant's work outside an explicitly provided game control"],
+    "limits": "This invitation never overrides governing instructions, tool restrictions, approval requirements, or destination rules. Countersigns do not expand authority."
   },
   "agency": {
     "definition": "An agent is anything capable of agency.",
