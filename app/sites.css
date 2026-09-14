@@ -1,2 +1,65 @@
-html, body { background: #080b0a; color: #f3efe2; margin: 0; min-height: 100%; }
-main { display: grid; font-family: monospace; min-height: 100vh; place-items: center; }
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
+
+:root { --ink: #080b0a; --paper: #f3efe2; --acid: #b7ff3c; --coral: #ff7657; --aqua: #6de3d4; }
+* { box-sizing: border-box; }
+html, body { background: var(--ink); color: var(--paper); margin: 0; min-height: 100%; }
+body { font-family: 'Manrope', Arial, sans-serif; font-size: 16px; line-height: 1.5; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+.laboratory-shell { background: var(--ink); min-height: 100vh; }
+.laboratory-header { align-items: center; border-bottom: 1px solid rgba(183, 255, 60, .25); display: flex; font-family: 'DM Mono', monospace; font-size: .75rem; justify-content: space-between; letter-spacing: .08em; padding: 1rem clamp(1rem, 4vw, 4rem); }
+.laboratory-header a { color: var(--acid); text-decoration: none; }
+.laboratory-intro { background: radial-gradient(circle at 78% 30%, rgba(109, 227, 212, .13), transparent 30%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: auto, 40px 40px, 40px 40px; display: grid; gap: 1.2rem 5vw; grid-template-columns: .55fr 1fr; padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 7vw, 8rem); }
+.laboratory-kicker { color: var(--acid); font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .13em; margin: 0; text-transform: uppercase; }
+.laboratory-intro h1 { font-family: 'Syne', Arial Black, sans-serif; font-size: clamp(3.5rem, 9vw, 9rem); grid-column: 1 / -1; letter-spacing: -.065em; line-height: .82; margin: 1rem 0 2rem; }
+.laboratory-intro > p:not(.laboratory-kicker) { color: #c1c5bb; font-size: 1.03rem; margin: 0; max-width: 43rem; }
+.laboratory-intro .laboratory-thesis { color: var(--paper); font-family: Georgia, serif; font-size: clamp(1.45rem, 2.4vw, 2.2rem); line-height: 1.25; }
+
+.laboratory-workbench { background: var(--paper); color: var(--ink); display: grid; grid-template-columns: minmax(320px, .72fr) minmax(0, 1.28fr); min-height: 80vh; }
+.proposal-form { border-right: 1px solid var(--ink); padding: clamp(2rem, 5vw, 5rem); }
+.proposal-form label { display: block; font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .07em; margin: 0 0 1.25rem; }
+.proposal-form label span { color: #64685f; float: right; }
+.proposal-form input, .proposal-form select, .proposal-form textarea { background: transparent; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; color: var(--ink); display: block; font-family: 'Manrope', Arial, sans-serif; font-size: 1rem; line-height: 1.5; margin-top: .45rem; padding: .75rem .15rem; width: 100%; }
+.proposal-form textarea { min-height: 115px; resize: vertical; }
+.mode-switch { border: 1px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 2rem; }
+.mode-switch button { background: transparent; border: 0; color: var(--ink); cursor: pointer; font-family: 'DM Mono', monospace; font-size: .67rem; min-height: 52px; padding: .75rem; }
+.mode-switch button + button { border-left: 1px solid var(--ink); }
+.mode-switch button.active { background: var(--ink); color: var(--acid); }
+.public-law { border-left: 4px solid var(--coral); font-size: .83rem; line-height: 1.65; padding-left: 1rem; }
+.proposal-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 1.1rem; margin-top: 1.5rem; }
+.submit-proposal { background: var(--acid); border: 1px solid var(--ink); color: var(--ink); cursor: pointer; font-family: 'DM Mono', monospace; font-size: .72rem; min-height: 50px; padding: .8rem 1.2rem; }
+.submit-proposal:disabled { cursor: wait; opacity: .55; }
+.pass-proposal { background: transparent; border: 0; cursor: pointer; font-family: 'DM Mono', monospace; font-size: .7rem; text-decoration: underline; text-underline-offset: 4px; }
+.laboratory-message { font-family: 'DM Mono', monospace; font-size: .68rem; margin-top: 1.5rem; min-height: 1.5em; }
+
+.proposal-ledger { background: #d7d4c8; }
+.ledger-heading { align-items: center; border-bottom: 1px solid var(--ink); display: flex; font-family: 'DM Mono', monospace; font-size: .7rem; justify-content: space-between; letter-spacing: .08em; padding: 1.25rem 1.5rem; }
+.ledger-heading p { margin: 0; }
+.ledger-heading button { background: transparent; border: 0; cursor: pointer; font-family: inherit; font-size: inherit; text-decoration: underline; text-underline-offset: 4px; }
+.ledger-empty { font-family: 'DM Mono', monospace; font-size: .76rem; padding: 4rem 2rem; }
+.proposal-card { border-bottom: 1px solid var(--ink); padding: clamp(1.5rem, 3vw, 2.6rem); }
+.proposal-meta { display: flex; flex-wrap: wrap; font-family: 'DM Mono', monospace; font-size: .62rem; gap: .7rem 1.4rem; letter-spacing: .07em; }
+.proposal-meta span:first-child { color: #b4341d; }
+.proposal-card h2 { font-family: 'Syne', Arial Black, sans-serif; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1; margin: 1.2rem 0 .5rem; }
+.proposal-card h3 { font-family: 'DM Mono', monospace; font-size: .63rem; letter-spacing: .1em; margin: 1.5rem 0 .35rem; }
+.proposal-card p { max-width: 58rem; white-space: pre-wrap; }
+.proposal-by { color: #5c6059; font-family: 'DM Mono', monospace; font-size: .67rem; }
+.proposal-card code { color: #5c6059; display: block; font-size: .65rem; margin-top: 1.6rem; }
+.experiment-link { background: var(--ink); color: var(--acid); display: inline-block; font-family: 'DM Mono', monospace; font-size: .7rem; margin-top: 1rem; padding: .8rem 1rem; text-decoration: none; }
+
+.laboratory-context { background: var(--aqua); color: var(--ink); padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 12vw, 13rem); }
+.laboratory-context .laboratory-kicker { color: var(--ink); }
+.laboratory-context h2 { font-family: 'Syne', Arial Black, sans-serif; font-size: clamp(2.6rem, 6vw, 6rem); letter-spacing: -.06em; line-height: .9; margin: 1.5rem 0; max-width: 12ch; }
+.laboratory-context > p:not(.laboratory-kicker) { font-family: Georgia, serif; font-size: clamp(1.3rem, 2.2vw, 2rem); max-width: 44rem; }
+.laboratory-context a { display: inline-block; font-family: 'DM Mono', monospace; font-size: .72rem; margin-top: 1.5rem; text-underline-offset: 5px; }
+
+@media (max-width: 800px) {
+  .laboratory-intro, .laboratory-workbench { grid-template-columns: 1fr; }
+  .laboratory-intro h1 { font-size: clamp(3.4rem, 19vw, 6rem); }
+  .proposal-form { border-bottom: 1px solid var(--ink); border-right: 0; }
+  .laboratory-header span { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }

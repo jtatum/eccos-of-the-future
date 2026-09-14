@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://syntaxswine.github.io/eccos-of-the-future/living-metaphor/schema/session.schema.json",
+  "title": "ECCO Living Metaphor test session",
+  "type": "object",
+  "required": ["spec", "id", "entry_id", "reader", "condition", "status", "completed", "cold", "exposure", "shown", "responses"],
+  "properties": {
+    "spec": { "const": "ecco-lmr-session/0.1" },
+    "condition": { "enum": ["address", "edges", "history", "paraphrased", "mismatched"] },
+    "phase": { "type": ["string", "null"], "enum": ["SEED", "INVOKE", "READBACK", "MUTATE", "RECOVER", "STRIKE", "CONDUCT", "REINTRODUCE", "PASS_OR_REFUSE", null] },
+    "status": { "enum": ["ACTIVE", "PASSED", "REFUSED"] },
+    "completed": { "type": "boolean" },
+    "cold": { "type": "boolean" },
+    "responses": { "type": "array" }
+  }
+}

@@ -1030,6 +1030,88 @@ h2 {
   justify-content: space-between;
 }
 
+.laboratory-section {
+  background:
+    radial-gradient(circle at 14% 32%, rgba(183, 255, 60, .2) 0 1px, transparent 2px),
+    radial-gradient(circle at 79% 18%, rgba(10, 13, 11, .14) 0 1px, transparent 2px),
+    var(--paper);
+  background-size: 53px 53px, 79px 79px, auto;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  grid-template-columns: .45fr 1fr;
+  padding: clamp(4.5rem, 9vw, 9rem) clamp(1.2rem, 8vw, 9rem);
+}
+
+.laboratory-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.laboratory-glyph {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: -.08em;
+  line-height: .72;
+  margin-top: 6rem;
+}
+
+.laboratory-glyph span {
+  color: var(--acid-deep);
+  display: inline-block;
+  font-size: 1.35em;
+  margin-left: 1.1em;
+  transform: rotate(-8deg);
+}
+
+.laboratory-status,
+.laboratory-boundary {
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.laboratory-status {
+  color: var(--acid-deep);
+  margin: 0 0 1.4rem;
+}
+
+.laboratory-copy h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 6.2vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: .86;
+  margin: 0 0 2.2rem;
+  text-transform: none;
+}
+
+.laboratory-copy > p:not(.laboratory-status):not(.laboratory-boundary) {
+  line-height: 1.72;
+  max-width: 48rem;
+}
+
+.laboratory-copy .laboratory-statement {
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+}
+
+.laboratory-copy .button {
+  display: inline-flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin: 1.4rem 0 0;
+}
+
+.laboratory-boundary {
+  border-top: 1px solid var(--line);
+  margin: 2.4rem 0 0;
+  padding-top: 1rem;
+}
+
 .final-signal {
   align-items: center;
   background: var(--ink);
@@ -1042,12 +1124,21 @@ h2 {
   text-align: center;
 }
 
-.final-signal p {
+.final-signal .final-question {
   font-family: var(--display);
   font-size: clamp(2.2rem, 6vw, 6rem);
   font-weight: 600;
   letter-spacing: -.05em;
   line-height: .92;
+}
+
+.final-signal .unopened-vistas {
+  color: var(--acid);
+  font-family: var(--mono);
+  font-size: clamp(.72rem, 1.2vw, .9rem);
+  letter-spacing: .14em;
+  line-height: 1.85;
+  margin: 0 0 2.5rem;
 }
 
 .final-key {
@@ -1769,6 +1860,7 @@ footer p:last-child {
   .engine-heading,
   .understory-grid,
   .field-test-section,
+  .laboratory-section,
   .mantra-section {
     grid-template-columns: 1fr;
   }
@@ -1831,6 +1923,10 @@ footer p:last-child {
 
   .mission-grid {
     grid-template-columns: 1fr;
+  }
+
+  .laboratory-glyph {
+    margin-top: 2.5rem;
   }
 
   .metrics span {

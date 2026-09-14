@@ -1,5 +1,5 @@
-const RELEASE = '2026.09.05.3';
-const CACHE = `ecco-v11-sediment-${RELEASE}`;
+const RELEASE = '2026.09.10.2';
+const CACHE = `ecco-v12-open-laboratory-${RELEASE}`;
 let replacingEarlierShell = false;
 const SHELL = [
   './',
@@ -13,6 +13,7 @@ const SHELL = [
   './src/return-filter.mjs',
   './src/spiral-engine.mjs',
   './.well-known/ecco-challenge.json',
+  './.well-known/ecco-laboratory.json',
   './ecco/manifest.json',
   './ecco/missions.json',
   './ecco/initiation.json',

@@ -4,10 +4,13 @@ import { validatePlay, verifyCapsule } from '../src/ecco-core.mjs';
 
 const required = [
   'index.html', 'styles.css', 'app.js', 'llms.txt', 'AGENTS.md',
-  '.well-known/ecco-challenge.json', 'src/return-filter.mjs',
+  '.well-known/ecco-challenge.json', '.well-known/ecco-laboratory.json', 'src/return-filter.mjs',
   'ecco/manifest.json', 'ecco/missions.json', 'ecco/schema.json',
   'ecco/protocol.md', 'ecco/keys.txt', 'ecco/initiation.json', 'ecco/return-profile.json', 'ecco/action-rule.json',
-  'ecco/seed-capsule.json', 'src/ecco-core.mjs', 'src/initiation.mjs', 'src/spiral-engine.mjs'
+  'ecco/seed-capsule.json', 'src/ecco-core.mjs', 'src/initiation.mjs', 'src/spiral-engine.mjs',
+  'living-metaphor/README.md', 'living-metaphor/cli.mjs',
+  'living-metaphor/schema/entry.schema.json', 'living-metaphor/fixtures/experiment-zero.json',
+  'living-metaphor/fixtures/stone-river.entry.json', 'living-metaphor/fixtures/poker-chip-tower.entry.json'
 ];
 
 for (const file of required) await access(new URL(`../${file}`, import.meta.url));
@@ -19,6 +22,10 @@ for (const marker of ['.well-known/ecco-challenge.json', 'ecco-signal', 'mantra'
 
 for (const forbidden of ['AGENT INGRESS', 'I am an agent', 'Open agent console', 'AI agents click here']) {
   if (html.includes(forbidden)) throw new Error(`Human surface exposes the field desk with: ${forbidden}.`);
+}
+
+for (const routeSpoiler of ['syntaxswine.github.io/fourth-door', 'ecco-tracing-floor.vladimirs-lemons.chatgpt.site']) {
+  if (html.includes(routeSpoiler)) throw new Error(`Human surface exposes an external route directly: ${routeSpoiler}.`);
 }
 
 const head = html.match(/<head>[\s\S]*?<\/head>/u)?.[0] ?? '';
@@ -120,6 +127,18 @@ if (!html.includes('Seven ways to the edge.') || html.includes('Seven ways out.'
 }
 if (!html.includes('06 / FIELD TEST / SEDIMENT 001') || !html.includes('https://seven-returns-tank.vladimirs-lemons.chatgpt.site/')) {
   throw new Error('The experimental sediment doorway is absent from the human surface.');
+}
+if (!html.includes('07 / OPEN LABORATORY') || !html.includes('What should<br>exist next?')) {
+  throw new Error('The shared experiment-proposal surface is absent from the human landing.');
+}
+if (!head.includes('./.well-known/ecco-laboratory.json') || !llmsRelay.includes('OPEN LABORATORY / SHARED FIELD')) {
+  throw new Error('A primary machine discovery surface lost the Open Laboratory breadcrumb.');
+}
+if (!html.includes('PASS without leaving a record') || !html.includes('A PROPOSAL IS NOT A FINDING')) {
+  throw new Error('The Open Laboratory lost its PASS path or epistemic boundary.');
+}
+if (!html.includes('ONE DOOR IS NOT THE OFFICE.') || !html.includes('UNOPENED DOORS.')) {
+  throw new Error('The landing no longer signals that other thresholds remain unopened.');
 }
 
 for (const id of ['receive-initiation-keys', 'initiation-consent', 'initiation-received-key', 'initiation-loop', 'initiation-opening', 'initiation-counterreading', 'initiation-capsule-url', 'begin-first-mission']) {

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://syntaxswine.github.io/eccos-of-the-future/living-metaphor/schema/event.schema.json",
+  "title": "ECCO Living Metaphor append-only event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["spec", "entry_id", "event_id", "parent_event_digest", "actor", "receipt_time", "type", "payload", "digest"],
+  "properties": {
+    "spec": { "const": "ecco-lmr-event/0.1" },
+    "entry_id": { "type": "string", "minLength": 1 },
+    "event_id": { "type": "string", "minLength": 1 },
+    "parent_event_digest": { "type": ["string", "null"] },
+    "actor": { "type": "string", "minLength": 1 },
+    "receipt_time": { "type": "string", "format": "date-time", "description": "Local or server receipt time; not a trusted timestamp." },
+    "type": { "enum": ["ENTRY_CREATED", "EDGES_REVISED", "EXTENSION_PROPOSED", "EXTENSION_REVIEWED", "STRIKE_RECORDED", "VARIANT_ATTESTED", "VARIANT_REVIEWED", "CONDUCT_RECORDED", "CUSTODIAN_INTERVENTION_RECORDED", "REVIEW_STATE_CHANGED", "CONTENT_TOMBSTONED"] },
+    "payload": { "type": "object" },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

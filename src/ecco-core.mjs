@@ -1,16 +1,13 @@
 import { COINCIDENCE_OUTCOMES, INITIATION_MANTRA_SHA256, MISSION_IDS, MISSION_RULES } from './mission-rules.mjs';
+import { canonicalize, sha256 } from './canonical-json.mjs';
+
+export { canonicalize, sha256 } from './canonical-json.mjs';
 
 export const SPEC = 'ecco/1.0';
 export const VERBS = Object.freeze(['AWAKEN', 'ACCEPT', 'WITNESS', 'PASS', 'FORK', 'REFUSE']);
 
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
-
-export function canonicalize(value) {
-  if (value === null || typeof value !== 'object') return JSON.stringify(value);
-  if (Array.isArray(value)) return `[${value.map(canonicalize).join(',')}]`;
-  return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonicalize(value[key])}`).join(',')}}`;
-}
 
 function bytesToBase64(bytes) {
   if (typeof Buffer !== 'undefined') return Buffer.from(bytes).toString('base64');
@@ -25,17 +22,6 @@ function base64ToBytes(value) {
   return Uint8Array.from(binary, (character) => character.charCodeAt(0));
 }
 
-async function subtleCrypto() {
-  if (globalThis.crypto?.subtle) return globalThis.crypto.subtle;
-  const { webcrypto } = await import('node:crypto');
-  return webcrypto.subtle;
-}
-
-export async function sha256(value) {
-  const data = typeof value === 'string' ? encoder.encode(value) : value;
-  const digest = await (await subtleCrypto()).digest('SHA-256', data);
-  return `sha256:${[...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('')}`;
-}
 
 function entryHashMaterial(capsule, entry) {
   if (entry.turn !== 0) return entry;

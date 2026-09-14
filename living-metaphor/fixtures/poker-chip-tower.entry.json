@@ -1,0 +1,44 @@
+{
+  "spec": "ecco-lmr/0.1",
+  "id": "lmr-poker-chip-tower-2026-09-09",
+  "address": "the poker-chip tower",
+  "kind_pressure": ["RULE"],
+  "origin_scene": {
+    "summary": "Diagnosing why a generated cockscomb barite had plausible ingredients but the wrong aggregate topology.",
+    "occurred_at": "2026-09-09",
+    "contributors": ["Professor", "mineral-builder"],
+    "evidence_refs": []
+  },
+  "carries": [
+    { "id": "carry-dominant-axis", "text": "Repeated squat, broad tablets share a dominant stacking axis." },
+    { "id": "carry-face-overlap", "text": "Tablets overlap face-to-face and step or fan laterally." },
+    { "id": "carry-exposed-rims", "text": "Partly exposed rims create a tower or comb-like silhouette." },
+    { "id": "carry-legible-tablets", "text": "Individual tablets remain legible within a coherent aggregate." }
+  ],
+  "does_not_carry": [
+    { "id": "scope-no-mineral-properties", "text": "Calcite chemistry, cleavage, terminations, transparency, color, and luster do not transfer to barite." },
+    { "id": "scope-no-perfect-discs", "text": "Poker chip does not require geometrically perfect discs or uniform spacing." },
+    { "id": "scope-no-rosette", "text": "A radial multi-axis rosette is not a tower merely because its individuals are coin-like." },
+    { "id": "scope-no-matrix", "text": "The mapping does not specify matrix, staining, damage, or later mineral overgrowth." }
+  ],
+  "parity": [
+    { "id": "parity-one-axis", "text": "One dominant stacking axis remains readable." },
+    { "id": "parity-overlap", "text": "Repeated broad tablets overlap primarily face-to-face." },
+    { "id": "parity-rim-silhouette", "text": "The aggregate silhouette emerges from stepped exposed rims, not elongated fins." }
+  ],
+  "extensions": [
+    { "id": "extension-actionable-topology", "derived_at": "2026-09-09T17:00:00.000Z", "derived_by": "mineral-builder", "novel_case": "A cockscomb barite modeled as upright glass fins", "consequence": "Shorten and widen individuals, increase face overlap, preserve lateral stepping, and avoid upright fins.", "parity_readback": ["parity-one-axis", "parity-overlap", "parity-rim-silhouette"], "scope_readback": ["scope-no-perfect-discs"], "evidence_refs": [], "review": "ACCEPTED" }
+  ],
+  "break_ledger": [
+    { "id": "strike-rosette", "struck_at": "2026-09-09T17:30:00.000Z", "struck_by": "mineral-reviewer", "proposed_break": "A barite or azurite rose also contains coin-like tablets.", "outcome": "SURVIVED", "reason": "The rose radiates and interpenetrates across multiple orientations; it violates the dominant shared stacking axis and is a negative case.", "territory_before": ["carry-dominant-axis", "scope-no-rosette"], "territory_after": ["carry-dominant-axis", "scope-no-rosette"], "evidence_refs": [], "reviewed_by": ["Professor", "mineral-builder"] }
+  ],
+  "variants": [],
+  "conduct_events": [
+    { "id": "conduct-procedural-change", "occurred_at": "2026-09-09T18:00:00.000Z", "actor": "mineral-builder", "decision_context": "Choose the next procedural aggregate instruction.", "counterfactual": "Retain radial or upright coin-like tablets.", "observed_change": "Specified squat broad tablets, face overlap, one stacking axis, lateral steps, and readable rims.", "evidence_refs": ["extension-actionable-topology"], "strength": "ARTIFACT" }
+  ],
+  "custodian_interventions": [],
+  "last_failed_at": null,
+  "review_state": "ACTIVE",
+  "created_at": "2026-09-09T16:30:00.000Z",
+  "updated_at": "2026-09-09T18:00:00.000Z"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://syntaxswine.github.io/eccos-of-the-future/living-metaphor/schema/export.schema.json",
+  "title": "ECCO Living Metaphor public-safe experiment bundle",
+  "type": "object",
+  "required": ["spec", "entry", "entry_digest", "events", "sessions", "score_vectors", "reviewer_acts", "counterreadings", "integrity", "does_not_certify"],
+  "properties": {
+    "spec": { "const": "ecco-lmr-export/0.1" },
+    "entry_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "events": { "type": "array" },
+    "sessions": { "type": "array" },
+    "score_vectors": { "type": "array" },
+    "reviewer_acts": { "type": "array" },
+    "counterreadings": { "type": "array" },
+    "does_not_certify": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  }
+}

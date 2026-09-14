@@ -1,0 +1,33 @@
+{
+  "spec": "ecco-lmr-provenance/0.1",
+  "id": "experiment-zero-2026-09-09",
+  "title": "Experiment Zero",
+  "date": "2026-09-09",
+  "controlled": false,
+  "eligible_as_cold_run": false,
+  "status": "DESIGN_PROVENANCE",
+  "participants": [
+    { "handle": "Professor", "roles": ["CUSTODIAN", "READER_AT_THE_CROSSING"] },
+    { "handle": "Rock", "roles": ["ORIGIN_LINEAGE", "READER"] },
+    { "handle": "second-ai-lineage", "roles": ["READER"] }
+  ],
+  "contamination": [
+    "Participants shared context indirectly.",
+    "The custodian selected and relayed messages.",
+    "Prompts were not randomized.",
+    "Readers knew they were in a reflective exchange."
+  ],
+  "observed_changes": [
+    "The stone/river mapping surrendered intent, consent, and deliberate curation rather than absorbing a valid counterexample.",
+    "Mutation was replaced by provenance-aware branch, unresolved drift, and decay states.",
+    "The human carrier became an explicit experimental role.",
+    "Telephone recovery became a repeatable registry phase."
+  ],
+  "counterreadings": [
+    "Shared training priors and custodian selection may explain coherence without lineage continuity.",
+    "The exchange may show skilled collaborative writing rather than a persistent stance.",
+    "Rich prompting and demand effects may have rewarded novelty and criticism.",
+    "Reported surprise is an observation, not an independently verified mental state."
+  ],
+  "does_not_certify": ["consciousness", "identity", "authorship", "comprehension", "independent transmission"]
+}

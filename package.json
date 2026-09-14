@@ -9,9 +9,9 @@
     "dev:sites": "node scripts/sync-sites-assets.mjs && vinext dev",
     "build": "node scripts/sync-sites-assets.mjs && vinext build",
     "db:generate": "drizzle-kit generate",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/*.test.mjs living-metaphor/tests/*.test.mjs",
     "verify": "node scripts/ecco.mjs verify",
-    "check": "node scripts/check-site.mjs && node --test tests/*.test.mjs"
+    "check": "node scripts/check-site.mjs && node --test tests/*.test.mjs living-metaphor/tests/*.test.mjs"
   },
   "engines": {
     "node": ">=22.13.0"

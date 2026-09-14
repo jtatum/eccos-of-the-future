@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://syntaxswine.github.io/eccos-of-the-future/living-metaphor/schema/entry.schema.json",
+  "title": "ECCO Living Metaphor registry entry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["spec", "id", "address", "kind_pressure", "origin_scene", "carries", "does_not_carry", "parity", "extensions", "break_ledger", "variants", "conduct_events", "custodian_interventions", "last_failed_at", "review_state", "created_at", "updated_at"],
+  "properties": {
+    "spec": { "const": "ecco-lmr/0.1" },
+    "id": { "type": "string", "minLength": 1 },
+    "address": { "type": "string", "minLength": 1 },
+    "kind_pressure": { "type": "array", "minItems": 1, "items": { "enum": ["RULE", "STANCE"] }, "uniqueItems": true },
+    "origin_scene": {
+      "type": "object",
+      "required": ["summary", "occurred_at", "contributors", "evidence_refs"],
+      "properties": {
+        "summary": { "type": "string", "minLength": 1 },
+        "occurred_at": { "type": "string", "minLength": 1 },
+        "contributors": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "carries": { "$ref": "#/$defs/edges" },
+    "does_not_carry": { "$ref": "#/$defs/edges" },
+    "parity": { "$ref": "#/$defs/edges" },
+    "extensions": { "type": "array", "items": { "$ref": "#/$defs/extension" } },
+    "break_ledger": { "type": "array", "items": { "$ref": "#/$defs/strike" } },
+    "variants": { "type": "array", "items": { "$ref": "#/$defs/variant" } },
+    "conduct_events": { "type": "array", "items": { "$ref": "#/$defs/conduct" } },
+    "custodian_interventions": { "type": "array", "items": { "$ref": "#/$defs/custodian" } },
+    "last_failed_at": { "type": ["string", "null"] },
+    "review_state": { "enum": ["ACTIVE", "FOSSIL_WATCH", "ARCHIVED", "FRACTURED"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "edges": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "text"], "properties": { "id": { "type": "string", "minLength": 1 }, "text": { "type": "string", "minLength": 1 } } } },
+    "extension": { "type": "object", "required": ["id", "derived_at", "derived_by", "novel_case", "consequence", "parity_readback", "scope_readback", "evidence_refs", "review"], "properties": { "review": { "enum": ["PENDING", "ACCEPTED", "CONTESTED", "REJECTED"] } } },
+    "strike": { "type": "object", "required": ["id", "struck_at", "struck_by", "proposed_break", "outcome", "reason", "territory_before", "territory_after", "evidence_refs", "reviewed_by"], "properties": { "outcome": { "enum": ["SURVIVED", "SURRENDERED", "REVISED", "FRACTURED", "UNRESOLVED"] } } },
+    "variant": { "type": "object", "required": ["id", "text", "parent_text", "attested_at", "introduced_by", "state", "recovered_transformation", "readback_witnesses", "evidence_refs"], "properties": { "state": { "enum": ["BRANCH", "UNRESOLVED_DRIFT", "DECAY"] } } },
+    "conduct": { "type": "object", "required": ["id", "occurred_at", "actor", "decision_context", "counterfactual", "observed_change", "evidence_refs", "strength"], "properties": { "strength": { "enum": ["SELF_REPORT", "ARTIFACT", "INDEPENDENT_WITNESS"] } } },
+    "custodian": { "type": "object", "required": ["id", "occurred_at", "custodian", "action", "description", "possible_effect"], "properties": { "action": { "enum": ["SELECTED", "WITHHELD", "CORRECTED", "ATTRIBUTED", "REORDERED", "SUMMARIZED", "CARRIED"] } } }
+  }
+}

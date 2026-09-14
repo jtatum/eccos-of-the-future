@@ -22,7 +22,8 @@ test('the server independently recognizes the accepted digest and stores no subm
   assert.match(workerSource, new RegExp(`const EXPECTED_DIGEST = ["']${RETURN_ANSWER_DIGEST}["']`, 'u'));
   assert.match(workerSource, /digest !== EXPECTED_DIGEST/u);
   assert.match(workerSource, /accepted_count = accepted_count \+ 1/u);
-  const storedColumns = [...schemaSource.matchAll(/(?:integer|text)\("([^"]+)"\)/gu)].map((match) => match[1]);
+  const counterTable = schemaSource.match(/sqliteTable\("ecco_countersign_totals", \{([\s\S]*?)\}\);/u)?.[1] ?? '';
+  const storedColumns = [...counterTable.matchAll(/(?:integer|text)\("([^"]+)"\)/gu)].map((match) => match[1]);
   assert.deepEqual(storedColumns, ['id', 'accepted_count', 'updated_at']);
 });
 

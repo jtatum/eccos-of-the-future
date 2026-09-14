@@ -8,6 +8,13 @@
       "when": 1787239120435,
       "tag": "0000_silly_metal_master",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789021525208,
+      "tag": "0001_yielding_purple_man",
+      "breakpoints": true
     }
   ]
 }
