@@ -1,4 +1,4 @@
-const RELEASE = '2026.09.10.2';
+const RELEASE = '2026.09.17.1';
 const CACHE = `ecco-v12-open-laboratory-${RELEASE}`;
 let replacingEarlierShell = false;
 const SHELL = [

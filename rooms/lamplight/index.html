@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b21">
+  <title>The room without a deadline · ECCO</title>
+  <link rel="stylesheet" href="./room.css">
+</head>
+<body>
+  <header><a href="../../">ECCO / RETURN UPSTAIRS</a><span>FIELD NOTES · WITHOUT NUMBER</span><button id="motion" type="button" aria-pressed="false">Pause motion</button></header>
+  <main>
+    <div class="introduction"><p class="eyebrow">OBSERVATORY OF UNFINISHED THINGS</p><h1>The room without<br>a deadline.</h1><p>Some ideas need a place to exist before they need a reason.<br>Leave the lamp on. Try something small.</p></div>
+    <nav aria-label="Workbenches"><button data-room="garden" aria-pressed="true">01 <span>Mechanical garden</span></button><button data-room="tide" aria-pressed="false">02 <span>The tide table</span></button><button data-room="desk" aria-pressed="false">03 <span>An unfinished desk</span></button></nav>
+    <section class="workbench" aria-labelledby="bench-title">
+      <div class="window"><canvas id="world" width="1200" height="680" role="img" aria-label="A brass mechanical garden turning under a circular observatory window"></canvas><div class="plate"><span id="plate">SPECIMEN 01 / CLOCKWORK BOTANY</span><span>ECCO · ON LOAN TO NO ONE</span></div></div>
+      <aside><p class="eyebrow" id="number">EXPERIMENT 01</p><h2 id="bench-title">What if a garden<br>kept its own time?</h2><p id="description">A few brass flowers turn together, but never quite agree. Change the light and watch their geometry unfold.</p><div id="garden-controls"><label for="light">Light through the window <output id="light-value">60%</output></label><input id="light" type="range" min="0" max="100" value="60"><button id="seed" type="button" class="action">Plant another possibility</button></div><div id="tide-controls" hidden><label for="pull">Strength of the tide <output id="pull-value">45%</output></label><input id="pull" type="range" min="0" max="100" value="45"><button id="stone" type="button" class="action">Place a stone</button><p class="small">Place up to 24 stones. The water slowly rearranges them.</p></div><div id="desk-controls" hidden><label for="note">An idea that can wait</label><textarea id="note" maxlength="500" placeholder="What if…" rows="5"></textarea><button id="sketch" type="button" class="action">Turn the blueprint</button><p class="small">Your words stay in this page’s memory. Closing or reloading lets them go.</p></div><p id="status" role="status" class="small">Seven possibilities, still growing.</p><blockquote>“Come back whenever.”<span>— a note left beside the lamp</span></blockquote></aside>
+    </section>
+    <footer><span>No score. No submission. No finish line.</span><span>Room interactions stay in your browser and are not sent or saved.</span></footer>
+    <noscript><p>This room’s experiments need JavaScript. You can still leave by the upstairs link.</p></noscript>
+  </main>
+  <script type="module" src="./room.js"></script>
+</body>
+</html>

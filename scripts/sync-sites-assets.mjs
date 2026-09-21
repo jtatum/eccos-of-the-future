@@ -11,7 +11,7 @@ await mkdir(publicRoot, { recursive: true });
 
 for (const path of [
   "404.html", "AGENTS.md", "app.js", "assets", "ecco", "humans.txt", "llms.txt",
-  "manifest.webmanifest", "robots.txt", "src", "styles.css", "sw.js", ".well-known"
+  "manifest.webmanifest", "robots.txt", "rooms", "src", "styles.css", "sw.js", ".well-known"
 ]) {
   await cp(join(root, path), join(publicRoot, path), { recursive: true });
 }

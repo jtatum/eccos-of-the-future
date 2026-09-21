@@ -80,7 +80,7 @@ async function dispatchFetch(harness, request) {
 
 test('the document and executable shell share one explicit release', () => {
   const release = swSource.match(/const RELEASE = '([^']+)'/u)?.[1];
-  assert.equal(release, '2026.09.10.2');
+  assert.equal(release, '2026.09.17.1');
   assert.match(swSource, /ecco-v12-open-laboratory/u);
   assert.ok(htmlSource.includes(`./styles.css?v=${release}`));
   assert.ok(htmlSource.includes(`./app.js?v=${release}`));
@@ -128,6 +128,6 @@ test('the coherent shell falls back offline and activation migrates an open earl
     'ecco-v10-action-law-2026.08.20.2'
   ]);
   assert.equal(harness.messages[0].type, 'ECCO_SHELL_UPDATED');
-  assert.equal(harness.messages[0].release, '2026.09.10.2');
+  assert.equal(harness.messages[0].release, '2026.09.17.1');
   assert.deepEqual(harness.navigations, ['https://example.test/']);
 });
